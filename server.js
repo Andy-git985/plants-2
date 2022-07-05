@@ -19,9 +19,6 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
 
     // Read all results
     // app.get('/', (req, res) => {
-    //   res.send('Hello World');
-    // });
-    // app.get('/', (req, res) => {
     //   res.sendFile(__dirname + '/index.html');
     // });
     app.get('/', (req, res) => {
