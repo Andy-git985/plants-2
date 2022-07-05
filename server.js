@@ -78,16 +78,6 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
       res.sendFile(__dirname + '/index.html');
     });
 
-    app.post('/upload', (req, res) => {
-      employeesCollection
-        .insertMany(data)
-        .then((result) => {
-          res.json('Success');
-          // res.render('index.ejs', { employees: results });
-        })
-        .catch((error) => console.error(error));
-    });
-
     const PORT = process.env.PORT || 8000;
     app.listen(PORT, () => console.log(`Listening on ${PORT}`));
   })
