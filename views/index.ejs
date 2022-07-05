@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="/main.js" defer></script>
+    <link rel="stylesheet" href="/styles.css" />
+    <title>Plant Shop</title>
+  </head>
+  <body>
+    <!-- <div class="grid">
+      <div>
+        <img
+          src="/images/image1.jpg"
+          alt="Hands holding an aglaonema in a grey pot"
+        />
+      </div>
+      <div>
+        <img
+          src="/images/image2.jpg"
+          alt="Hand holding rattlesnake plant in a white pot"
+        />
+      </div>
+      <div>
+        <img
+          src="/images/image3.jpg"
+          alt="Two hands holding up a monstera plant in a grey pot"
+        />
+      </div>
+      <div>
+        <img
+          src="/images/image4.jpg"
+          alt="Two sets of hands holding a Alocasia Stringray plant in a white pot"
+        />
+      </div>
+      <div>
+        <img
+          src="/images/image5.jpg"
+          alt="Hand holding three prayer plant cuttings inside glass containers set on a wood base"
+        />
+      </div>
+      <div>
+        <img
+          src="/images/image6.jpg"
+          alt="Hand holding up a pink Aglaonema plant in a pink pot"
+        />
+      </div>
+    </div> -->
+
+    <div class="grid">
+      <% for(var i = 0; i < store.length; i++) {%>
+      <div>
+        <img src=<%= store[i].img %> alt=<%= store[i]["alt text"] %> />
+        <p><%= store[i].desc %></p>
+      </div>
+      <% } %>
+    </div>
+  </body>
+</html>
