@@ -4,11 +4,25 @@ const MongoClient = require('mongodb').MongoClient;
 const app = express();
 const connectionString = process.env.DB_URL;
 
-app.use(express.static('public'));
+MongoClient.connect(connectionString, { useUnifiedTopology: true })
+  .then((client) => {
+    console.log('Connected to Database');
+    const db = client.db('plants');
+    const plantCollection = db.collection('store');
 
-app.get('/', (request, response) => {
-  response.sendFile(__dirname + '/index.html');
-});
+    // app.set('view engine', 'ejs');
 
-const PORT = process.env.PORT || 8000;
-app.listen(PORT, () => console.log(`Listening on ${PORT}`));
+    // Middleware
+    app.use(express.static('public'));
+    app.use(express.json());
+    app.use(express.urlencoded({ extended: true }));
+
+    // Read all results
+    app.get('/', (req, res) => {
+      res.sendFile(__dirname + '/index.html');
+    });
+
+    const PORT = process.env.PORT || 8000;
+    app.listen(PORT, () => console.log(`Listening on ${PORT}`));
+  })
+  .catch((error) => console.error(error));
