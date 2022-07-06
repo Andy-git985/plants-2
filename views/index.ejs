@@ -5,54 +5,84 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="/main.js" defer></script>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="/reset.css" />
     <link rel="stylesheet" href="/styles.css" />
     <title>Plant Shop</title>
   </head>
   <body>
-    <!-- <div class="grid">
-      <div>
-        <img
-          src="/images/image1.jpg"
-          alt="Hands holding an aglaonema in a grey pot"
-        />
-      </div>
-      <div>
-        <img
-          src="/images/image2.jpg"
-          alt="Hand holding rattlesnake plant in a white pot"
-        />
-      </div>
-      <div>
-        <img
-          src="/images/image3.jpg"
-          alt="Two hands holding up a monstera plant in a grey pot"
-        />
-      </div>
-      <div>
-        <img
-          src="/images/image4.jpg"
-          alt="Two sets of hands holding a Alocasia Stringray plant in a white pot"
-        />
-      </div>
-      <div>
-        <img
-          src="/images/image5.jpg"
-          alt="Hand holding three prayer plant cuttings inside glass containers set on a wood base"
-        />
-      </div>
-      <div>
-        <img
-          src="/images/image6.jpg"
-          alt="Hand holding up a pink Aglaonema plant in a pink pot"
-        />
-      </div>
-    </div> -->
 
-    <div class="grid">
+    <div class="bg-dark-light text-light">
+      <header class="fs-300">
+        <nav>
+          <div
+            class="nav grid three-col container ff-accent"
+            style="margin: 0 auto"
+          >
+            <!-- Possibly make this wider -->
+            <div style="place-self: center start">Logo</div>
+            <div class="flex" style="place-self: center center; --gap: 3em">
+              <div class="dropdown">
+                <button class="dropbtn">Plants</button>
+                <div class="dropdown-content">
+                  <a href="#">Lorem</a>
+                  <a href="#">Lorem</a>
+                  <a href="#">Lorem</a>
+                </div>
+              </div>
+
+              <div class="dropdown">
+                <button class="dropbtn">Tools</button>
+                <div class="dropdown-content">
+                  <a href="#">Lorem</a>
+                  <a href="#">Lorem</a>
+                  <a href="#">Lorem</a>
+                </div>
+              </div>
+
+              <div class="dropdown">
+                <button class="dropbtn">Care</button>
+                <div class="dropdown-content">
+                  <a href="#">Lorem</a>
+                  <a href="#">Lorem</a>
+                  <a href="#">Lorem</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex" style="place-self: center end">
+              <span><i class="fa-solid fa-magnifying-glass"></i></span>
+              <span><i class="fa-solid fa-user"></i></span>
+              <span><i class="fa-solid fa-cart-shopping"></i></span>
+            </div>
+          </div>
+        </nav>
+      </header>
+    </div>
+
+    <div class="grid grid-store container">
       <% for(var i = 0; i < store.length; i++) {%>
-      <div>
-        <img src=<%= store[i].img %> alt=<%= store[i]["alt text"] %> />
-        <p><%= store[i].desc %></p>
+      <div class="item">
+        <img src=<%= store[i].img %> alt=<%=store[i]['alt text']%> />
+        <button class="hidden-details btn best-btn" style="--fs: 1rem">
+          Add to cart
+        </button>
       </div>
       <% } %>
     </div>

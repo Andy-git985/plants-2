@@ -1,5 +1,313 @@
+:root {
+  --ff-primary: 'Roboto', sans-serif;
+  --ff-accent: 'Playfair Display', serif;
+
+  /* Discreet Palette */
+  --clr-dark: #3f7e24;
+  --clr-dark-light: #7e9870;
+  --clr-light: #f5fbf1;
+  --clr-accent: #9999cc;
+
+  --fs-500: 2rem;
+  --fs-400: 1.3125rem;
+  --fs-300: 1rem;
+  --fs-200: 0.875rem;
+}
+
+body {
+  font-family: var(--ff-primary);
+  font-weight: 400;
+  font-size: var(--fs-400);
+  line-height: 1.6;
+  background: var(--clr-light);
+  color: rgba(0, 0, 0, 0.8);
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--ff-accent);
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 1em;
+}
+
+h1 {
+  font-size: var(--fs-500);
+}
+
+nav a:hover {
+  opacity: 0.25;
+}
+
+.container {
+  /* margin-inline: auto; */
+  margin: 1rem auto 0;
+  width: min(90%, 70.5rem);
+}
+
+section {
+  padding: 4em 0;
+}
+
+/* !wider container */
+.nav,
+.footer {
+  width: 90vw;
+  padding: 2em 0;
+}
+
+/* More space from content */
+.footer {
+  margin-top: 5em;
+  padding: 5rem 0;
+}
+
+.flow > *:where(:not(:first-child)) {
+  margin-top: var(--flow-space, 1rem);
+}
+
+/* used to space icons */
+.flex {
+  display: flex;
+  gap: var(--gap, 1.5em);
+}
+
+.center {
+  justify-content: center;
+}
+
+.col {
+  flex-direction: column;
+}
+
+/* === Grid === */
 .grid {
   display: grid;
+  gap: var(--gap, 1rem);
+}
+
+/* header and featured */
+.three-col {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.video {
+  grid-template-columns: 2fr 1fr;
+}
+
+.sign-up,
+.footer {
+  grid-template-columns: auto auto;
+}
+
+.featured > img {
+  object-fit: cover;
+  object-position: center center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Videos */
+.video-container {
+  max-width: 53.3125rem;
+}
+
+video {
+  width: 100%;
+  height: auto;
+}
+
+/* ! Add to cart functionality */
+.hidden-details {
+  display: none;
+  position: absolute;
+  bottom: 1.5em;
+  left: 1em;
+  z-index: 2;
+}
+
+.best-seller,
+.item {
+  position: relative;
+  z-index: 1;
+}
+
+.best-seller:hover .hidden-details,
+.item:hover .hidden-details {
+  display: inline-block;
+}
+
+.best-sellers-grid {
+  gap: 1.5rem;
+  grid-auto-columns: 1fr;
+  grid-template-areas:
+    'monstera'
+    'rubber-fig'
+    'snake-plant'
+    'rattlesnake-plant';
+}
+
+@media (min-width: 26.8125rem) {
+  .best-sellers-grid {
+    grid-template-areas:
+      'monstera rubber-fig'
+      'snake-plant rattlesnake-plant';
+  }
+}
+@media (min-width: 56.3125rem) {
+  .best-sellers-grid {
+    grid-template-areas:
+      'rubber-fig monstera monstera monstera '
+      'snake-plant monstera monstera monstera '
+      'rattlesnake-plant monstera monstera monstera ';
+  }
+}
+
+.best-seller:nth-child(1) {
+  grid-area: monstera;
+  max-height: 100%;
+}
+.best-seller:nth-child(2) {
+  grid-area: rubber-fig;
+}
+.best-seller:nth-child(3) {
+  grid-area: snake-plant;
+}
+.best-seller:nth-child(4) {
+  grid-area: rattlesnake-plant;
+}
+
+/* slideshow container */
+.slideshow {
+  position: relative;
+  display: block;
+  width: 40rem;
+  height: 60rem;
+  outline: 1px solid red;
+}
+
+.slides {
+  object-fit: cover;
+  width: 100%;
+  overflow: hidden;
+}
+
+.thumb-bar img {
+  display: block;
+  width: 6.25rem;
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  /* background change */
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.prev {
+  left: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* sections */
+.showcase,
+.overlay {
+  height: 46.875rem;
+}
+
+.showcase {
+  background: url(./assets/chris-abney-qLW70Aoo8BE-unsplash.jpg) center/cover;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Forms */
+.email-input {
+  font-size: 1.25rem;
+  padding: 0.5em 1.25em;
+  border-radius: 0.3594rem;
+  color: var(--clr-accent);
+}
+
+/**
+* ! Buttons 
+**/
+.btn {
+  font-size: var(--fs, 1.25rem);
+  padding: 0.5em 1.25em;
+  border-radius: 0.3594rem;
+  background-color: var(--clr-accent);
+  color: var(--clr-light);
+  border: none;
+}
+
+.best-btn {
+  font-family: var(--ff-accent);
+  font-weight: 700;
+  padding: 0.5em 1.45em;
+}
+
+/* ? Color classes */
+.bg-dark {
+  background-color: var(--clr-dark);
+}
+
+.bg-dark-light {
+  background-color: var(--clr-dark-light);
+}
+
+.text-light {
+  color: var(--clr-light);
+}
+
+.text-dark {
+  color: var(--clr-dark);
+}
+
+/* ! Font */
+.ff-accent {
+  font-family: var(--ff-accent);
+}
+
+.fs-300 {
+  font-size: var(--fs-300);
+}
+
+.fs-200 {
+  font-size: var(--fs-200);
+}
+
+.grid-store {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 16px;
 }
@@ -8,3 +316,60 @@ img {
   width: 100%;
   cursor: pointer;
 }
+
+/* ? Dropdown menus */
+
+/* Dropdown nav */
+.dropdown {
+  font-size: 0.875rem;
+}
+
+/* Dropdown Button */
+.dropbtn {
+  color: hsl(var(--clr-light));
+  background-color: var(--clr-dark-light);
+  /*   padding: 16px; */
+  padding: 1.0625rem 2em;
+  /* padding-bottom: 1.0625rem; */
+
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  /*   background-color: var(--clr-dark-light); */
+  background-color: var(--clr-dark-light);
+  min-width: 2em;
+  /*   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  /* padding: 12px 16px; */
+  padding: 0.5em 2em 1em;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  color: #000;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+/* .dropdown:hover .dropbtn {background-color: #3e8e41;}  */
