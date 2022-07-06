@@ -120,6 +120,18 @@ video {
   height: auto;
 }
 
+/* ? Cart styling */
+.cartAmount {
+  position: absolute;
+  top: -0.9375rem;
+  right: -0.625rem;
+  font-size: 1rem;
+  background-color: red;
+  color: white;
+  padding: 0.1875rem;
+  border-radius: 0.1875rem;
+}
+
 /* ! Add to cart functionality */
 .hidden-details {
   display: none;

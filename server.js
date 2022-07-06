@@ -23,7 +23,6 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
         .toArray()
         .then((store) => {
           res.render('index.ejs', { store: store });
-          store.forEach((x) => console.log(x['alt text']));
         })
         .catch(/* ... */);
     });
