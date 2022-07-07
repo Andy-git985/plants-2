@@ -9,5 +9,3 @@ const calculation = () => {
 };
 
 calculation();
-
-const generateCartItems()

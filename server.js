@@ -27,6 +27,10 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
         .catch(/* ... */);
     });
 
+    app.get('/cart', (req, res) => {
+      res.sendFile(`${__dirname}/views/cart.html`);
+    });
+
     const PORT = process.env.PORT || 8000;
     app.listen(PORT, () => console.log(`Listening on ${PORT}`));
   })
