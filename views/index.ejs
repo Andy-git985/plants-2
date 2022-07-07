@@ -85,8 +85,9 @@
     <div class="grid grid-store container">
       <% for(var i = 0; i < store.length; i++) {%>
       <div class="item">
-        <img src=<%= store[i].img %> alt=<%=store[i]['alt text']%> />
-        <button class="hidden-details btn best-btn" style="--fs: 1rem">
+        <img  src=<%= store[i].img %> alt=<%=store[i]['alt text']%> />
+        <!-- <p><%= store[i]["_id"] %></p> -->
+        <button data-id=<%= store[i]["_id"] %> id="addToCart" class="hidden-details btn best-btn" style="--fs: 1rem">
           Add to cart
         </button>
       </div>
